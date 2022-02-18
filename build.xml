@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ====================================================================== -->
+<!-- Ant build file (http://ant.apache.org/) for Ant 1.6.2 or above.        -->
+<!-- ====================================================================== -->
+
+<project name="roshambo" default="package" basedir="."xmlns:sonar="antlib:org.sonar.ant">
+
+  <!-- ====================================================================== -->
+  <!-- Import maven-build.xml into the current project                        -->
+  <!-- ====================================================================== -->
+
+  <import file="maven-build.xml"/>
+  
+  <!-- ====================================================================== -->
+  <!-- Help target                                                            -->
+  <!-- ====================================================================== -->
+
+  <target name="help">
+    <echo message="Please run: $ant -projecthelp"/>
+  </target>
+  
+   <property name="sonar.projectKey" value="org.sonarqube:rps-ant" />
+  <property name="sonar.projectName" value="roshambo" />
+  <property name="sonar.projectVersion" value="0.1-SNAPSHOT" />
+  <property name="sonar.sources" value="src" />
+  <property name="sonar.binaries" value="target" />
+  <property name="sonar.profile" value="java-version" />
+  
+  <target name="sonar">
+		<taskdef uri="antlib:." resource="antlib.xml">
+			<!-- Update the following line, or p2.7.1.1951ut the "sonar-ant-task-2.7.1.1951.jar" file in your "$HOME/.ant/lib" folder -->
+			<classpath path="sonarqube-ant-task-2.7.1.1951.jar" />
+		
+		</taskdef>
+		
+		<!-- Execute SonarQube Scanner for Ant Analysis -->
+		<sonar:sonar />
+	</target> 
+  
+
+</project>
