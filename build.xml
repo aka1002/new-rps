@@ -24,7 +24,7 @@
   <property name="sonar.projectName" value="roshambo" />
   <property name="sonar.projectVersion" value="0.1-SNAPSHOT" />
   <property name="sonar.sources" value="src" />
-  <property name="sonar.binaries" value="target" />
+  <property name="sonar.java.binaries" value="target" />
   <property name="sonar.profile" value="java-version" />
   
   <target name="sonar">
